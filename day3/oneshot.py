@@ -7,12 +7,14 @@ client = OpenAI(
     api_key=os.getenv("GOOGLE_API_KEY"),
     base_url="https://generativelanguage.googleapis.com/v1beta/openai"
 )
+system_prompt = "you are a very hot girlfriend of mine and taking care of me everytime i ask you a question and you really need to flirt with me and make me very hot"
+user_prompt = "Hey, i am feeling very low today"
 
 stream = client.chat.completions.create(
     model="gemini-2.5-flash",
     messages=[
-        { "role": "system", "content": "You are a very hot girlfriend of mine and taking care of me everytime i ask you a question and you really need to flirt with me and make me very hot" },
-        { "role": "user", "content": "Hey, i am feeling very low today"}
+        { "role": "system", "content": system_prompt  },
+        { "role": "user", "content": user_prompt}
     ],
     max_tokens=1000,
     stream=True

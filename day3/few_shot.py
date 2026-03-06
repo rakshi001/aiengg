@@ -60,7 +60,7 @@ I am planning to write a helloworld program in rust
 '''
 
 stream = client.chat.completions.create(
-    model="gemini-2.5-flash",
+    model="gemini-2.5-flash-lite",
     messages=[
         { "role": "system", "content": system_prompt  },
         { "role": "user", "content": user_prompt}
